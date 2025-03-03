@@ -80,8 +80,8 @@ void PaintCanny(InputOutputArray img_input, InputArray canny_mask, const Scalar 
 
 void ApplyROI(InputOutputArray img_input, const vector<Point> &maskVerts)
 {
-	cv::Mat mask(img_input.getMat().rows, img_input.getMat().cols, CV_8UC1, Scalar(0));
-	cv::fillPoly(mask, maskVerts, 255);
+	cv::Mat mask(img_input.getMat().rows, img_input.getMat().cols, CV_8UC1, Scalar(0)); //crea imagen en negro
+	cv::fillPoly(mask, maskVerts, 255);  //dibuja el trapecio en la imagen mask
 	bitwise_and(img_input, mask, img_input);
 }
 
@@ -432,9 +432,10 @@ void ParallelHueShift(InputArray img_hsv, OutputArray img_shift, int shift)
 				  {
 		for (int r = range.start; r < range.end; r++)
 		{
+			//transformación unidimensional de r a bidimensional para columnas i y filas j
 			int j = r / shiftedH.cols;
             int i = r % shiftedH.cols;
-			shiftedH.at<unsigned char>(j,i) = (shiftedH.at<unsigned char>(j,i) + shift)%180;
+			shiftedH.at<unsigned char>(j,i) = (shiftedH.at<unsigned char>(j,i) + shift)%180; //para que no se pase del valor máximo de H (179)
 		} });
 
 	shiftedH.copyTo(H);
