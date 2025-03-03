@@ -256,7 +256,7 @@ int main(int argc, char *argv[])
 					right_points.push_back(points[i]);
 				}
 			}
-			if (first)
+			if (first) //asignacion de leftline y rightline únicamente en la primera iteración
 			{
 				first = false;
 				left_line = left_points;
@@ -275,9 +275,9 @@ int main(int argc, char *argv[])
 					// Se necesita tener linea completa al inicio
 					for (int i = 0; i < left_points.size(); i++)
 					{
-						if ((i + 1) == left_line.size())
+						if ((i + 1) == left_line.size()) //si el siguiente es el último punto de la linea del frame
 						{
-							distancia = distancePointToLine(left_line[i - 1], left_line[i], left_points[i]);
+							distancia = distancePointToLine(left_line[i - 1], left_line[i], left_points[i]); //devuelve distancia del punto left_points a la recta formada por los puntos de left_line
 							if (distancia > 5)
 							{
 								cout << "Frame " << cuenta << " Dist " << distancia << " quitar altura " << left_points[i].y << endl;
@@ -286,9 +286,9 @@ int main(int argc, char *argv[])
 							else
 								cout << "Frame " << cuenta << " Dist " << distancia << " altura BIEN " << left_points[i].y << endl;
 						}
-						else
+						else //para el resto de puntos
 						{
-							distancia = distancePointToLine(left_line[i], left_line[i + 1], left_points[i]);
+							distancia = distancePointToLine(left_line[i], left_line[i + 1], left_points[i]); 
 							if (distancia > 5)
 							{
 								cout << "Frame " << cuenta << " Dist " << distancia << " quitar altura " << left_line[i].y << endl;

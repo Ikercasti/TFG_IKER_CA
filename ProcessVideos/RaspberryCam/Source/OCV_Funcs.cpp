@@ -987,15 +987,15 @@ std::vector<cv::Point> DavidLanePoints(InputArray binImg, int bottomY, int topY,
 		for (int j = (imgMat.cols / 2); j > 0; j--)
 		{
 			// cout<< (int)(imgMat.at<uchar>(i, j)) << " " ;
-			if ((int)(imgMat.at<uchar>(i, j)) > 0)
+			if ((int)(imgMat.at<uchar>(i, j)) > 0) //devuelve 0->blanco 255->negro para el pixel seleccionado. 
 			{
-				count++;
+				count++; //si es blanco aumenta count
 			}
 			else
 			{
 				if (count > threshold)
 				{
-					white_points.push_back(cv::Point(j + (count / 2), i));
+					white_points.push_back(cv::Point(j + (count / 2), i)); //se añade un punto en el centro de esa linea
 					count = 0;
 					break;
 				}
@@ -1035,7 +1035,7 @@ std::vector<cv::Point> DavidLanePoints(InputArray binImg, int bottomY, int topY,
  */
 double distancePointToLine(const cv::Point &A, const cv::Point &B, const cv::Point &P)
 {
-	// Return the distance
+	// Return the distance de punto a la linea formada por AB
 	double numerator = std::abs((B.y - A.y) * P.x - (B.x - A.x) * P.y + B.x * A.y - B.y * A.x);
 	double denominator = std::sqrt(std::pow(B.y - A.y, 2) + std::pow(B.x - A.x, 2));
 	return numerator / denominator;
