@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos
+CMAKE_SOURCE_DIR = /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build
+CMAKE_BINARY_DIR = /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TrackAprox.dir/depend.make
@@ -69,43 +69,43 @@ include CMakeFiles/TrackAprox.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/TrackAprox.dir/flags.make
 
-CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o: CMakeFiles/TrackAprox.dir/flags.make
-CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o: /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/TrackAprox.cpp
-CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o: CMakeFiles/TrackAprox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o -MF CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o.d -o CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o -c /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/TrackAprox.cpp
+CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o: CMakeFiles/TrackAprox.dir/flags.make
+CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o: /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/TrackAproxIker.cpp
+CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o: CMakeFiles/TrackAprox.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o -MF CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o.d -o CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o -c /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/TrackAproxIker.cpp
 
-CMakeFiles/TrackAprox.dir/TrackAprox.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrackAprox.dir/TrackAprox.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/TrackAprox.cpp > CMakeFiles/TrackAprox.dir/TrackAprox.cpp.i
+CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/TrackAproxIker.cpp > CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.i
 
-CMakeFiles/TrackAprox.dir/TrackAprox.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrackAprox.dir/TrackAprox.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/TrackAprox.cpp -o CMakeFiles/TrackAprox.dir/TrackAprox.cpp.s
+CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/TrackAproxIker.cpp -o CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.s
 
 CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o: CMakeFiles/TrackAprox.dir/flags.make
-CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o: /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp
+CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o: /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp
 CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o: CMakeFiles/TrackAprox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o -MF CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o.d -o CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o -c /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o -MF CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o.d -o CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o -c /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp
 
 CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp > CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp > CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.i
 
 CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp -o CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp -o CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.s
 
 # Object files for target TrackAprox
 TrackAprox_OBJECTS = \
-"CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o" \
+"CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o" \
 "CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o"
 
 # External object files for target TrackAprox
 TrackAprox_EXTERNAL_OBJECTS =
 
-TrackAprox: CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o
+TrackAprox: CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o
 TrackAprox: CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o
 TrackAprox: CMakeFiles/TrackAprox.dir/build.make
 TrackAprox: /usr/lib/aarch64-linux-gnu/libopencv_stitching.so.4.6.0
@@ -164,7 +164,7 @@ TrackAprox: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.6.0
 TrackAprox: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.6.0
 TrackAprox: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.6.0
 TrackAprox: CMakeFiles/TrackAprox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable TrackAprox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable TrackAprox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TrackAprox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -176,6 +176,6 @@ CMakeFiles/TrackAprox.dir/clean:
 .PHONY : CMakeFiles/TrackAprox.dir/clean
 
 CMakeFiles/TrackAprox.dir/depend:
-	cd /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles/TrackAprox.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles/TrackAprox.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TrackAprox.dir/depend
 

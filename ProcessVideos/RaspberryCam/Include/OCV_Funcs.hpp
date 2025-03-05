@@ -129,6 +129,7 @@ namespace LineProcess{
 
 std::vector<cv::Point> DavidLanePoints(InputArray binImg, int bottomY, int topY, int window_size, int threshold);
 double distancePointToLine(const cv::Point& A, const cv::Point& B, const cv::Point& P);
+void ikerDrawPoints(cv::InputOutputArray image, const vector<cv::Point> &points, cv::Scalar color, int thickness = 5);
 
 struct QuadraticCurve {
     double a, b, c;

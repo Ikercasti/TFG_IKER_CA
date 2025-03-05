@@ -1,5 +1,5 @@
-CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o: \
- /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/TrackAprox.cpp \
+CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o: \
+ /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/TrackAproxIker.cpp \
  /usr/include/stdc-predef.h /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
@@ -346,6 +346,32 @@ CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o: \
  /usr/include/opencv4/opencv2/video.hpp \
  /usr/include/opencv4/opencv2/video/tracking.hpp \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
+ /usr/include/opencv4/opencv2/ximgproc.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/edge_filter.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/disparity_filter.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/sparse_match_interpolator.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/structured_edge_detection.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/edgeboxes.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/edge_drawing.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/scansegment.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/seeds.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/segmentation.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/fast_hough_transform.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/estimated_covariance.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/weighted_median_filter.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/slic.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/lsc.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/paillou_filter.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/fast_line_detector.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/deriche_filter.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/peilin.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/fourier_descriptors.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/ridgefilter.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/brightedges.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/run_length_morphology.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/edgepreserving_filter.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/color_match.hpp \
+ /usr/include/opencv4/opencv2/ximgproc/radon_transform.hpp \
  /usr/include/c++/12/fstream \
  /usr/include/aarch64-linux-gnu/c++/12/bits/basic_file.h \
  /usr/include/aarch64-linux-gnu/c++/12/bits/c++io.h \
@@ -357,5 +383,5 @@ CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
  /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Include/OCV_Funcs.hpp \
+ /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Include/OCV_Funcs.hpp \
  /usr/include/opencv4/opencv2/plot.hpp

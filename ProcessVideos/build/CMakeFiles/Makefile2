@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos
+CMAKE_SOURCE_DIR = /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build
+CMAKE_BINARY_DIR = /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/TrackAprox.dir/clean
 CMakeFiles/TrackAprox.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles --progress-num=1,2,3 "Built target TrackAprox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles --progress-num=1,2,3 "Built target TrackAprox"
 .PHONY : CMakeFiles/TrackAprox.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TrackAprox.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TrackAprox.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles 0
 .PHONY : CMakeFiles/TrackAprox.dir/rule
 
 # Convenience name for target.

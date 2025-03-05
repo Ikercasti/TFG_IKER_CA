@@ -1,7 +1,7 @@
 CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o: \
- /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp \
+ /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp \
  /usr/include/stdc-predef.h \
- /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Source/../Include/OCV_Funcs.hpp \
+ /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Source/../Include/OCV_Funcs.hpp \
  /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/opencv4/opencv2/core.hpp \

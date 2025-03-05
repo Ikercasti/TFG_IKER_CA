@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp" "CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o" "gcc" "CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o.d"
-  "/home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/TrackAprox.cpp" "CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o" "gcc" "CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o.d"
+  "/home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/RaspberryCam/Source/OCV_Funcs.cpp" "CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o" "gcc" "CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o.d"
+  "/home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/TrackAproxIker.cpp" "CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o" "gcc" "CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o.d"
   )
 
 # Targets to which this target links.

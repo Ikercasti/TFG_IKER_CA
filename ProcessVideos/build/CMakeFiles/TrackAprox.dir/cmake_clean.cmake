@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o"
   "CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.o.d"
-  "CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o"
-  "CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o.d"
+  "CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o"
+  "CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o.d"
   "TrackAprox"
   "TrackAprox.pdb"
 )

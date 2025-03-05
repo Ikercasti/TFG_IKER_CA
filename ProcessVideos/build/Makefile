@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos
+CMAKE_SOURCE_DIR = /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build
+CMAKE_BINARY_DIR = /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_Iker_CA/ProcessVideos/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ROBOGait/Documents/TFG_IKER_CA/ProcessVideos/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,29 +153,29 @@ RaspberryCam/Source/OCV_Funcs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/RaspberryCam/Source/OCV_Funcs.cpp.s
 .PHONY : RaspberryCam/Source/OCV_Funcs.cpp.s
 
-TrackAprox.o: TrackAprox.cpp.o
-.PHONY : TrackAprox.o
+TrackAproxIker.o: TrackAproxIker.cpp.o
+.PHONY : TrackAproxIker.o
 
 # target to build an object file
-TrackAprox.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/TrackAprox.cpp.o
-.PHONY : TrackAprox.cpp.o
+TrackAproxIker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.o
+.PHONY : TrackAproxIker.cpp.o
 
-TrackAprox.i: TrackAprox.cpp.i
-.PHONY : TrackAprox.i
+TrackAproxIker.i: TrackAproxIker.cpp.i
+.PHONY : TrackAproxIker.i
 
 # target to preprocess a source file
-TrackAprox.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/TrackAprox.cpp.i
-.PHONY : TrackAprox.cpp.i
+TrackAproxIker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.i
+.PHONY : TrackAproxIker.cpp.i
 
-TrackAprox.s: TrackAprox.cpp.s
-.PHONY : TrackAprox.s
+TrackAproxIker.s: TrackAproxIker.cpp.s
+.PHONY : TrackAproxIker.s
 
 # target to generate assembly for a file
-TrackAprox.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/TrackAprox.cpp.s
-.PHONY : TrackAprox.cpp.s
+TrackAproxIker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TrackAprox.dir/build.make CMakeFiles/TrackAprox.dir/TrackAproxIker.cpp.s
+.PHONY : TrackAproxIker.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... RaspberryCam/Source/OCV_Funcs.o"
 	@echo "... RaspberryCam/Source/OCV_Funcs.i"
 	@echo "... RaspberryCam/Source/OCV_Funcs.s"
-	@echo "... TrackAprox.o"
-	@echo "... TrackAprox.i"
-	@echo "... TrackAprox.s"
+	@echo "... TrackAproxIker.o"
+	@echo "... TrackAproxIker.i"
+	@echo "... TrackAproxIker.s"
 .PHONY : help
 
 

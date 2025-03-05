@@ -12,7 +12,10 @@ message(OpenCV_DIR="${OpenCV_DIR}")
 
 include_directories( ${PROJECT_DIR} )
 
-add_executable( ${PROJECT_NAME} TrackAprox.cpp ${HEADERFILES} ${SOURCEFILES} )
+#add_executable( ${PROJECT_NAME} TrackAprox.cpp ${HEADERFILES} ${SOURCEFILES} )
+#target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
+
+add_executable( ${PROJECT_NAME} TrackAproxIker.cpp ${HEADERFILES} ${SOURCEFILES} )
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
 
 #add_executable( original TrackAprox_orig.cpp ${HEADERFILES} ${SOURCEFILES} )

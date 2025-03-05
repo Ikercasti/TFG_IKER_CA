@@ -1,5 +1,6 @@
 
 #include <opencv2/opencv.hpp>
+#include <opencv2/ximgproc.hpp>
 #include <iostream>
 #include <fstream> // for writing CSV
 #include <unistd.h>
@@ -141,6 +142,7 @@ int main(int argc, char *argv[])
 	closeKern = getStructuringElement(MORPH_CROSS, Size(5, 5));
 
 	Mat perspFrame, frameCpy, morphOut, imgHSV, imgThresh, imgCanny;
+	Mat imgcarril = cv::Mat::zeros(FRAME_SIZE_Y, FRAME_SIZE_X, CV_8UC3);
 	// ROI and laneLogic INIT
 	LineProcess::laneLogic laneL;
 	// reserve 4 spots to avoid costly memory reallocation operations
@@ -237,8 +239,8 @@ int main(int argc, char *argv[])
 			namedWindow("Morphed Image", WindowFlags::WINDOW_NORMAL);
 			imshow("Morphed Image", morphOut);
 
-			// Window = 100, 3 alturas || Window = 75, 4 alturas || Window = 70, 5 alturas ,, ( -> ancho minimo para considerarlo linea)
-			points = DavidLanePoints(morphOut, FRAME_SIZE_Y, FRAME_SIZE_Y * 2 / 3, 75, 8); 
+			// Window = 100, 3 alturas || Window = 75, 4 alturas || -> Window = 70, 5 alturas <- ,, ( -> ancho minimo para considerarlo linea)
+			points = DavidLanePoints(morphOut, FRAME_SIZE_Y, FRAME_SIZE_Y * 2 / 3, 60, 8); 
 			// Draw_Contour_Points(frameCpy, points);
 
 			// if(first)
@@ -262,96 +264,14 @@ int main(int argc, char *argv[])
 				left_line = left_points;
 				right_line = right_points;
 			}
-			else
-			{
-				// Deteccion de pocos puntos en frame
-				if (left_points.size() < 3)
-				{
-					cout << "Frame " << cuenta << " mala linea izq." << endl;
-				}
-				else
-				{
 
-					// Se necesita tener linea completa al inicio
-					for (int i = 0; i < left_points.size(); i++)
-					{
-						if ((i + 1) == left_line.size()) //si el siguiente es el último punto de la linea del frame
-						{
-							distancia = distancePointToLine(left_line[i - 1], left_line[i], left_points[i]); //devuelve distancia del punto left_points a la recta formada por los puntos de left_line
-							if (distancia > 5)
-							{
-								cout << "Frame " << cuenta << " Dist " << distancia << " quitar altura " << left_points[i].y << endl;
-								quitar.push_back(i);
-							}
-							else
-								cout << "Frame " << cuenta << " Dist " << distancia << " altura BIEN " << left_points[i].y << endl;
-						}
-						else //para el resto de puntos
-						{
-							distancia = distancePointToLine(left_line[i], left_line[i + 1], left_points[i]); 
-							if (distancia > 5)
-							{
-								cout << "Frame " << cuenta << " Dist " << distancia << " quitar altura " << left_line[i].y << endl;
-								quitar.push_back(i);
-							}
-							else
-								cout << "Frame " << cuenta << " Dist " << distancia << " altura BIEN " << left_line[i].y << endl;
-						}
+			Mat imgcarril = cv::Mat::zeros(FRAME_SIZE_Y, FRAME_SIZE_X, CV_8UC3);
+			ikerDrawPoints(imgcarril, left_points, cv::Scalar(0,255,255), 5);
+			ikerDrawPoints(imgcarril, right_points, cv::Scalar(0,255,255), 5);
+			namedWindow("Carril Image", WindowFlags::WINDOW_NORMAL);
+			imshow("Carril Image", imgcarril);
 
-						// Esta idea no está clara
-						/* for( int j = 0; j < left_line.size(); j++ ) {
-							 if (left_points[i].y == left_line[j].y) {
-								 if((j+1) == left_line.size()) {
-									 distancia = distancePointToLine(left_line[j-1]
-																	,left_line[j]
-																	,left_points[i]);
-									 if( distancia > 5 ) {
-										 cout << "Frame " << cuenta << " Dist " << distancia <<
-											 " quitar altura " <<  left_line[j].y << endl;
-										 quitar.push_back(i);
-									 }
-									 else
-										 cout << "Frame " << cuenta << " Dist " << distancia <<
-											 " altura BIEN " <<  left_line[j].y << endl;
-								 } else {
-									 distancia = distancePointToLine(left_line[j]
-																	,left_line[j+1]
-																	,left_points[i]);
-									 if(distancia > 5 ) {
-										 cout << "Frame " << cuenta << " Dist " << distancia <<
-											 " quitar altura " <<  left_line[j].y << endl;
-										 quitar.push_back(i);
-									 }
-									 else
-										 cout << "Frame " << cuenta << " Dist " << distancia <<
-											 " altura BIEN " <<  left_line[j].y << endl;
-								 }
-							 }
-						 } */
-					}
-				}
-
-				if (right_points.size() < 3)
-				{
-					cout << "Frame " << cuenta << "mala linea dch." << endl;
-				}
-
-				/* COMO SABEMOS CON QUE PUNTO COMPARA?
-						for( int i = 0; i < left_points.size(); i++ ) {
-							distance.push_back(distancePointToLine);
-							///
-						}
-			*/
-			}
-			for (int i = 0; i < quitar.size(); i++)
-			{
-				erased.push_back(left_points[quitar[i]]);
-				left_points.erase(left_points.begin() + quitar[i]);
-			}
-
-			Draw_Contour_Points(frameCpy, left_points);
-			Draw_Contour_Points(frameCpy, right_points);
-			Draw_Contour_Points(frameCpy, erased, cv::Scalar(150, 50, 0));
+			
 		}
 		else
 		{
@@ -369,6 +289,8 @@ int main(int argc, char *argv[])
 		// show the frame in the created window
 		// namedWindow("Line Image", WindowFlags::WINDOW_NORMAL);
 		imshow(window_name, frameCpy);
+
+		
 
 		// processing time it took since the beggining of the frame loop
 		int processTime = (getTickCount() - startTime) / getTickFrequency() * 1000;

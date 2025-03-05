@@ -1178,3 +1178,10 @@ double distanceToParabola(double a, double b, double c, double x_p, double y_p)
 
 	return distance;
 }
+
+void ikerDrawPoints(cv::InputOutputArray image, const vector<cv::Point> &points, cv::Scalar color, int thickness)
+{
+	for(int i = 0; i < points.size() - 1; i++){
+		cv::line(image.getMat(), points[i], points[i+1], color, thickness);
+	}
+}

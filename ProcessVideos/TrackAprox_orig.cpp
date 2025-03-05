@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <string>
 // #include <pthread.h>
-#include "../RaspberryCam_Support/Include/OCV_Funcs.hpp"
+#include "RaspberryCam/Include/OCV_Funcs.hpp"
 // #include "../RaspberryCam_Support/Include/PolyfitEigen.hpp"
 //#include "../RaspberryCam_Support/Include//spline.h"
 
