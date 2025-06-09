@@ -1,0 +1,114 @@
+// 📦 Archivo 1: Código para ESP32 (Arduino IDE)
+
+/*
+  Lee 3 TENGs en pines 34, 35 y 32.
+  Aplica filtrado exponencial simple a cada canal.
+  Envía valores por Bluetooth Serial como CSV a la Raspberry Pi.
+*/
+
+#define TENG1_PIN 34  // ADC1_CH6
+#define TENG2_PIN 35  // ADC1_CH7
+#define TENG3_PIN 32  // ADC1_CH4
+
+float prev1 = 0.0, prev2 = 0.0, prev3 = 0.0;
+const float alpha = 0.2;  // Suavizado
+
+void setup() {
+  Serial.begin(9600);
+  analogReadResolution(12); // 12-bit ADC
+}
+
+void loop() {
+  int raw1 = analogRead(TENG1_PIN);
+  int raw2 = analogRead(TENG2_PIN);
+  int raw3 = analogRead(TENG3_PIN);
+
+  float v1 = raw1 * 3.3 / 4095.0;
+  float v2 = raw2 * 3.3 / 4095.0;
+  float v3 = raw3 * 3.3 / 4095.0;
+
+  v1 = alpha * v1 + (1 - alpha) * prev1;
+  v2 = alpha * v2 + (1 - alpha) * prev2;
+  v3 = alpha * v3 + (1 - alpha) * prev3;
+
+  prev1 = v1;
+  prev2 = v2;
+  prev3 = v3;
+
+  unsigned long t = millis();
+  Serial.print("t:"); Serial.print(t);
+  Serial.print(",v1:"); Serial.print(v1, 4);
+  Serial.print(",v2:"); Serial.print(v2, 4);
+  Serial.print(",v3:"); Serial.println(v3, 4);
+
+  delay(10); // ~100 Hz
+}
+
+
+// 📦 Archivo 2: Código Python para Raspberry Pi
+
+"""
+Lee datos desde el ESP32 vía Bluetooth (ej: /dev/rfcomm0),
+parsea los valores de 3 canales y los visualiza en tiempo real,
+mientras los guarda en un archivo CSV.
+"""
+
+import serial
+import time
+import matplotlib.pyplot as plt
+from collections import deque
+import csv
+
+# Configuración
+PORT = "/dev/rfcomm0"
+BAUD = 9600
+BUFFER_SIZE = 100
+
+ser = serial.Serial(PORT, BAUD, timeout=1)
+data1 = deque([0.0] * BUFFER_SIZE, maxlen=BUFFER_SIZE)
+data2 = deque([0.0] * BUFFER_SIZE, maxlen=BUFFER_SIZE)
+data3 = deque([0.0] * BUFFER_SIZE, maxlen=BUFFER_SIZE)
+
+# Abrir archivo CSV
+csvfile = open("datos_teng.csv", "w", newline="")
+csvwriter = csv.writer(csvfile)
+csvwriter.writerow(["timestamp", "v1", "v2", "v3"])
+
+# Configurar gráfica
+plt.ion()
+fig, ax = plt.subplots()
+line1, = ax.plot(list(data1), label="TENG 1")
+line2, = ax.plot(list(data2), label="TENG 2")
+line3, = ax.plot(list(data3), label="TENG 3")
+ax.set_ylim(0, 3.3)
+ax.set_title("Lectura de 3 TENGs desde ESP32")
+ax.set_ylabel("Voltaje (V)")
+ax.legend()
+
+while True:
+    try:
+        line_raw = ser.readline().decode().strip()
+        if line_raw.startswith("t:"):
+            parts = line_raw.split(",")
+            t = int(parts[0].split(":")[1])
+            v1 = float(parts[1].split(":")[1])
+            v2 = float(parts[2].split(":")[1])
+            v3 = float(parts[3].split(":")[1])
+
+            data1.append(v1)
+            data2.append(v2)
+            data3.append(v3)
+
+            csvwriter.writerow([t, v1, v2, v3])
+
+            line1.set_ydata(data1)
+            line2.set_ydata(data2)
+            line3.set_ydata(data3)
+            ax.relim()
+            ax.autoscale_view()
+            fig.canvas.draw()
+            fig.canvas.flush_events()
+
+    except Exception as e:
+        print("Error:", e)
+        time.sleep(0.1)

@@ -1,0 +1,75 @@
+ 📦 Archivo 1 Código para ESP32 (Arduino IDE)
+
+
+  Lee un TENG desde el pin 34 (ADC1_CH6), aplica filtrado simple,
+  y envía datos por Bluetooth (Serial) a una Raspberry Pi.
+
+
+#define TENG_PIN 34
+float prev_voltage = 0.0;
+const float alpha = 0.2;  Suavizado
+
+void setup() {
+  Serial.begin(9600);  Bluetooth Serial (Serial via USB puede cambiar si usas BT real)
+  analogReadResolution(12);  12 bits → valores entre 0 y 4095
+}
+
+void loop() {
+  int raw = analogRead(TENG_PIN);
+  float voltage = raw  3.3  4095.0;
+  float filtered = alpha  voltage + (1 - alpha)  prev_voltage;
+  prev_voltage = filtered;
+
+  Serial.print(v);
+  Serial.print(filtered, 4);
+  Serial.print(,t);
+  Serial.println(millis());
+
+  delay(10);  ~100 Hz
+}
+
+ 📦 Archivo 2 Código Python para Raspberry Pi
+
+
+Lee datos desde el ESP32 vía Bluetooth (ej devrfcomm0),
+parsea los valores y los visualiza en tiempo real.
+
+
+import serial
+import time
+import matplotlib.pyplot as plt
+from collections import deque
+
+# Configuración
+PORT = devrfcomm0
+BAUD = 9600
+BUFFER_SIZE = 100
+
+ser = serial.Serial(PORT, BAUD, timeout=1)
+data = deque([0.0]  BUFFER_SIZE, maxlen=BUFFER_SIZE)
+
+plt.ion()
+fig, ax = plt.subplots()
+line, = ax.plot(list(data))
+ax.set_ylim(0, 3.3)
+ax.set_title(Señal TENG (filtrada desde ESP32))
+ax.set_ylabel(Voltaje (V))
+
+while True
+    try
+        line_raw = ser.readline().decode().strip()
+        if line_raw.startswith(v)
+            parts = line_raw.split(,)
+            voltage = float(parts[0].split()[1])
+            data.append(voltage)
+
+            line.set_ydata(data)
+            ax.relim()
+            ax.autoscale_view()
+            fig.canvas.draw()
+            fig.canvas.flush_events()
+
+    except Exception as e
+        print(Error, e)
+        time.sleep(0.1)
+
