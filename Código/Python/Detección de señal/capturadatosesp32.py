@@ -59,12 +59,12 @@ timer.start(10)
 
 # --- Guardar datos al salir ---
 def guardar_csv():
-    with open('muestras_matriz_confusion.csv', 'w', newline='') as csvfile: #prueba_medicion
+    with open('prueba_medicion.csv', 'w', newline='') as csvfile: #prueba_medicion
         writer = csv.writer(csvfile, delimiter=';')
         writer.writerow(['Voltaje (V)', 'Etiqueta'])
         for val, label in zip(raw_values, labels):
             writer.writerow([val, label])
-    print("Datos guardados en muestras_matriz_confusion.csv")
+    print("Datos guardados en prueba_sin_ruido.csv")
 
 app.aboutToQuit.connect(guardar_csv)
 
